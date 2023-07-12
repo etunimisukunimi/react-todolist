@@ -97,7 +97,7 @@ export default function App() {
 					<Modal
 						opened={opened}
 						size={'md'}
-						title={'New Task'}
+						title={'Новая задача'}
 						withCloseButton={false}
 						onClose={() => {
 							setOpened(false);
@@ -106,15 +106,15 @@ export default function App() {
 						<TextInput
 							mt={'md'}
 							ref={taskTitle}
-							placeholder={'Task Title'}
+							placeholder={'Заголовок задачи'}
 							required
-							label={'Title'}
+							label={'Заголовок'}
 						/>
 						<TextInput
 							ref={taskSummary}
 							mt={'md'}
-							placeholder={'Task Summary'}
-							label={'Summary'}
+							placeholder={'Содержание задачи'}
+							label={'Содержание'}
 						/>
 						<Group mt={'md'} position={'apart'}>
 							<Button
@@ -122,14 +122,14 @@ export default function App() {
 									setOpened(false);
 								}}
 								variant={'subtle'}>
-								Cancel
+								Отмена
 							</Button>
 							<Button
 								onClick={() => {
 									createTask();
 									setOpened(false);
 								}}>
-								Create Task
+								Создать задачу
 							</Button>
 						</Group>
 					</Modal>
@@ -140,7 +140,7 @@ export default function App() {
 									fontFamily: `Greycliff CF, ${theme.fontFamily}`,
 									fontWeight: 900,
 								})}>
-								My Tasks
+								Мои задачи
 							</Title>
 							<ActionIcon
 								color={'blue'}
@@ -172,7 +172,8 @@ export default function App() {
 											<Text color={'dimmed'} size={'md'} mt={'sm'}>
 												{task.summary
 													? task.summary
-													: 'No summary was provided for this task'}
+													: 'Нет краткого содержания для этой задачи'}
+													   
 											</Text>
 										</Card>
 									);
@@ -180,7 +181,7 @@ export default function App() {
 							})
 						) : (
 							<Text size={'lg'} mt={'md'} color={'dimmed'}>
-								You have no tasks
+								У тебя нет задач
 							</Text>
 						)}
 						<Button
@@ -189,7 +190,15 @@ export default function App() {
 							}}
 							fullWidth
 							mt={'md'}>
-							New Task
+							Новая задача
+						</Button>
+						<Button
+							onClick={() => {
+								alert('test')
+							}}
+							fullWidth
+							mt={'md'}>
+							Отправить запрос
 						</Button>
 					</Container>
 				</div>
